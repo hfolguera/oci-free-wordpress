@@ -1,16 +1,4 @@
-variable "tenancy_ocid" {
-}
-
 variable "compartment_id" {
-}
-
-variable "user_ocid" {
-}
-
-variable "fingerprint" {
-}
-
-variable "private_key_path" {
 }
 
 variable "region" {
