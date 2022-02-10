@@ -12,7 +12,7 @@
 .terraform
 #backend.tf
 #provider.tf
-**.tfvars
+#**.tfvars
 
 # Ignore large files
 *.zip
