@@ -14,10 +14,10 @@ variable "private_key_path" {
 }
 
 variable "region" {
-    default = "eu-frankfurt-1"
+  default = "eu-frankfurt-1"
 }
 
-variable "workload_prefix"{
-    description = "Prefix to add to all resources"
-    type = string
+variable "workload_prefix" {
+  description = "Prefix to add to all resources"
+  type        = string
 }

@@ -8,9 +8,9 @@ resource "oci_load_balancer_load_balancer" "lb-nm-001" {
   #Optional
   is_private = false
   shape_details {
-      #Required
-      maximum_bandwidth_in_mbps = 10
-      minimum_bandwidth_in_mbps = 10
+    #Required
+    maximum_bandwidth_in_mbps = 10
+    minimum_bandwidth_in_mbps = 10
   }
 }
 

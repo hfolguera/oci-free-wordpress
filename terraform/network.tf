@@ -45,7 +45,7 @@ resource "oci_core_default_security_list" "sl-default-nm-001" {
 
   ingress_security_rules {
     #Required
-    protocol = "6"               # TCP
+    protocol = "6"                # TCP
     source   = "79.156.158.47/32" # Use your public IP
 
     #Optional
