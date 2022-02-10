@@ -37,25 +37,25 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        sh 'cd terraform; terraform init'
+        sh 'terraform init'
       }
     }
 
     stage('Validate') {
       steps {
-        sh 'cd terraform; terraform validate'
+        sh 'terraform validate'
       }
     }
 
     stage('Format') {
       steps {
-        sh 'cd terraform; terraform fmt -recursive -check -diff'
+        sh 'terraform fmt -recursive -check -diff'
       }
     }
 
     stage('Plan') {
       steps {
-        sh 'cd terraform; terraform plan -input=false'
+        sh 'terraform plan -input=false'
       } 
     } 
   }
