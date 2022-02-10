@@ -1,11 +1,4 @@
 repos:
-  - repo: https://github.com/terraform-docs/terraform-docs
-    #rev: "<VERSION, TAG, OR SHA TO USE>"             # e.g. "v0.11.2"
-    hooks:
-      - id: terraform-docs-go
-        #args: ["ARGS", "TO PASS", "INCLUDING PATH"]  # e.g. ["--output-file", "README.md", "./mymodule/path"]
-
-repos:
   - repo: https://github.com/gruntwork-io/pre-commit
     rev: "v0.1.17" # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
     hooks:
