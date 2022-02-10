@@ -37,26 +37,56 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        sh 'terraform init'
+        ansiColor('xterm') {
+          sh 'terraform init'
+        }
       }
     }
 
     stage('Validate') {
       steps {
-        sh 'terraform validate'
+        ansiColor('xterm') {
+          sh 'terraform validate'
+        }
       }
     }
 
     stage('Format') {
       steps {
-        sh 'terraform fmt -recursive -check -diff'
+        ansiColor('xterm') {
+          sh 'terraform fmt -recursive -check -diff'
+        }
       }
     }
 
-    stage('Plan') {
+    stage('Plan'){
       steps {
-        sh 'terraform plan -input=false'
-      } 
-    } 
+        ansiColor('xterm') {
+          withCredentials([
+            file(credentialsId: 'private_key', variable: 'TF_VAR_private_key_path'),
+          ]) {
+            sh 'terraform plan -input=false'
+          }
+        }
+      }
+    }
+
+    stage('Approve'){
+      steps {
+        input ("Please, review the plan output. Apply configuration?")
+      }
+    }
+
+    stage('Apply'){
+      steps {
+        ansiColor('xterm') {
+          withCredentials([
+            file(credentialsId: 'private_key', variable: 'TF_VAR_private_key_path'),
+          ]) {
+            sh 'terraform apply -input=false'
+          }
+        }
+      }
+    }
   }
 }
