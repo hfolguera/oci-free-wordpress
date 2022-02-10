@@ -14,6 +14,7 @@ variable "private_key_path" {
 }
 
 variable "region" {
+    default = "eu-frankfurt-1"
 }
 
 variable "workload_prefix"{
